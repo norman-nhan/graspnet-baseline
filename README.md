@@ -16,8 +16,9 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
 ![teaser](doc/teaser.png)
 
 ## Requirements
+- uv
 - Python 3
-- PyTorch 1.6
+- PyTorch 2.10.0+cu128
 - Open3d >=0.8
 - TensorBoard 2.3
 - NumPy
@@ -25,31 +26,35 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
 - Pillow
 - tqdm
 
-## Installation
+## Installation via uv
 Get the code.
 ```bash
-git clone https://github.com/graspnet/graspnet-baseline.git
+git clone https://github.com/norman-nhan/graspnet-baseline.git
 cd graspnet-baseline
 ```
 Install packages via Pip.
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
+```
+Install torch.
+```bash
+uv pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cu128
 ```
 Compile and install pointnet2 operators (code adapted from [votenet](https://github.com/facebookresearch/votenet)).
 ```bash
 cd pointnet2
-python setup.py install
+uv pip install . --no-build-isolation
 ```
 Compile and install knn operator (code adapted from [pytorch_knn_cuda](https://github.com/chrischoy/pytorch_knn_cuda)).
 ```bash
 cd knn
-python setup.py install
+uv pip install . --no-build-isolation
 ```
 Install graspnetAPI for evaluation.
 ```bash
 git clone https://github.com/graspnet/graspnetAPI.git
 cd graspnetAPI
-pip install .
+uv pip install .
 ```
 
 ## Tolerance Label Generation
