@@ -27,6 +27,11 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
 - tqdm
 
 ## Installation via uv
+Create uv env.
+```bash
+uv venv graspnet_env --python 3.10
+. graspnet_env/bin/activate
+```
 Get the code.
 ```bash
 git clone https://github.com/norman-nhan/graspnet-baseline.git
